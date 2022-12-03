@@ -1,0 +1,197 @@
+
+<div class="whole_page">
+
+  {{#if car}}
+    {{#each car}}
+      <!--<p>
+        {{log car}}
+        {{TYPE}}
+        {{MAKE}}
+        {{MODEL}}
+        {{YEAR}}
+        {{MILES}}
+        {{MPG}}
+        {{COLOR}}
+        {{PRICE}}
+      </p>
+-->
+
+      <div class="title_container">
+        <h1 class="name_title">
+          {{YEAR}}
+          {{MAKE}}
+          {{MODEL}}
+        </h1>
+      </div>
+      <div class="gallery_container">
+        <div class="slide-container">
+          <span class="slider-span" id="slider-span1"></span>
+          <span class="slider-span" id="slider-span2"></span>
+          <span class="slider-span" id="slider-span3"></span>
+          <span class="slider-span" id="slider-span4"></span>
+          <span class="slider-span" id="slider-span5"></span>
+
+          <div class="image-slider">
+
+            <div class="slides-div" id="slide-2">
+              <img src="{{BACKPHOTO}}" alt="" class="img" id="img2" />
+              <a href="#slider-span2" class="button" id="button-2"></a>
+            </div>
+            <div class="slides-div" id="slide-3">
+              <img src="{{MAINPHOTO}}" alt="" class="img" id="img3" />
+              <a href="#slider-span3" class="button" id="button-3"></a>
+            </div>
+            <div class="slides-div" id="slide-4">
+              <img src="{{FRONTPHOTO}}" alt="" class="img" id="img4" />
+              <a href="#slider-span4" class="button" id="button-4"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="Overview_Title_container">
+        <h2 class="Overview_Title_text">Overview</h2>
+        <div class="line"></div>
+      </div>
+      <div class="detail_container">
+        <div class="info_container">
+
+          <div class="specs_container">
+
+            <div class="top_one top">
+              <img
+                class="drive_icon icons"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/84664923216267953713602-128.png?v=1669049452965"
+              />
+              <div class="text_container">
+                <h3 class="info_spec">
+                  4 wheel drive
+                </h3>
+                <p class="type_spec">
+                  Drive Type
+                </p>
+              </div>
+            </div>
+
+            <div class="top_two top">
+              <img
+                class="engine_icon icons"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/19623620751640841241-128.png?v=1669049451896"
+              />
+              <div class="text_container">
+                <h3 class="info_spec">
+                  6cyl/3
+                </h3>
+                <p class="type_spec">
+                  Engine Type
+                </p>
+              </div>
+            </div>
+
+            <div class="top_three top">
+              <img
+                class="gas_icon icons"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/9327231371556280914-128.png?v=1669049452339"
+              />
+              <div class="text_container">
+                <h3 class="info_spec">
+                  {{MPG}}
+                </h3>
+                <p class="type_spec">
+                  miles per gallon
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom_one bottom">
+              <img
+                class="owners_icon icons"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/8835701331556281664-128.png?v=1669049452532"
+              />
+              <div class="text_container">
+                <h3 class="info_spec">
+                  2 owners
+                </h3>
+                <p class="type_spec">
+                  Prior Owners
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom_two bottom">
+              <img
+                class="color_icon icons"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/6424188411555931402-128.png?v=1669063850572"
+              />
+
+              <div class="text_container">
+                <h3 class="info_spec">
+                  {{COLOR}}
+                </h3>
+                <p class="type_spec">
+                  Color
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom_three bottom">
+              <img
+                class="transmission_icon icons"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/8893889031595988887-128.png?v=1669049452125"
+              />
+              <div class="text_container">
+                <h3 class="info_spec">
+                  Automatic
+                </h3>
+                <p class="type_spec">
+                  Transmission
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="loancal">
+
+        <h1>Loan Calculator</h1>
+        <div class="input">
+
+          <p>Loan Amount: $</p>
+          <input
+            id="amount"
+            type="number"
+            min="1"
+            max="5000000"
+            onchange="computeLoan()"
+          />
+          <p>Interest Rate: %</p>
+          <input
+            id="interest_rate"
+            min="0"
+            max="100"
+            value="10"
+            step=".1"
+            onchange="computeLoan()"
+          />
+          <p>Months to Pay: </p>
+          <input
+            id="months"
+            type="number"
+            min="1"
+            max="300"
+            value="1"
+            step="1"
+            onchange="computeLoan()"
+          />
+          <h2 id="payment"></h2>
+        </div>
+      </div>
+
+    {{/each}}
+    {{#else}}
+      <p> no rows </p>
+    {{/else}}
+  {{/if}}
+</div>
