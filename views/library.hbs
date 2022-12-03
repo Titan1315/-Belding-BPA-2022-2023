@@ -1,3 +1,59 @@
-<div>
-  
+
+
+
+
+
+
+
+
+
+
+<div class="whole_page">
+  <!--
+  <form action="" method="GET">
+    <label>type</label>
+    <input type="text" id="field" name="type" value="1" />
+    <label>field</label>
+
+    <input type="text" id="type" name="field" value="ID" />
+    <input type="submit" value="Submit" />
+  </form>
+-->
+  <div class="inventory_title_container"><h1 class="inventory_title">Inventory</h1></div>
+  <div class="line-2"></div>
+  <div class="cards">
+    {{#if cars}}
+      {{#each cars}}
+         <div class="profile-default" id="{{ID}}">
+              <div class="profile__image"><img src="{{MAINPHOTO}}" alt="car" /></div> 
+               <div class="card_text_container">
+                 <div class="profile__info">
+                            <h3>{{MAKE}} {{MODEL}}</h3>
+                  </div>
+                       <div class="profile_stats_container">
+                              <div class="profile__stats">
+                                  <p class="profile__stats__title">Class</p>
+                                  <h5 class="profile__stats__info">{{TYPE}}</h5>
+                              </div>
+                              <div class="profile__stats stats2">
+                                  <p class="profile__stats__title">Price</p>
+                                  <h5>{{PRICE}}</h5>
+                              </div>
+                              <div class="profile__stats">
+                                  <p class="profile__stats__title">Year</p>
+                                  <h5 class="profile__stats__info">{{YEAR}}</h5>
+                              </div>
+                         </div>
+                      <div class="profile__cta"><a class="button_detail" href="./details/{{ID}}">More Details</a></div>
+                  </div>
+              </div>
+          {{/each}}
+        {{#else}}
+          <p> no rows </p>
+        {{/else}}
+    {{/if}}
+    <div class="whitespace">
+      
+    </div>
+  </div>
 </div>

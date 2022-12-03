@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;900&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-size: 100%;
+}
+
+
+
+
+
+.background {
+  background-image: url("https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/Gears%20(2).png?v=1668898993817");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  background-attachment: fixed;
+  background-position: center;
+  z-index: 1;
+}
+.half_page {
+  z-index: 100;
+  height: 100vh;
+  width: 40%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(237, 240, 241, 0.6);
+  backdrop-filter: blur(8px);
+}
+.logo_container {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin: auto;
+  height: 45%;
+  width: 50%;
+}
+.big_logo {
+  width: 100%;
+  height: 100%;
+}
+.hero_text {
+  z-index: 100;
+    position: absolute;
+    top: 32%;
+    /* right: 0; */
+    left: 5%;
+    text-align: center;
+    margin: 0 auto;
+    width: 30%;
+  
+
+}
+.hero_text h1 {
+  color: #24252a;
+  text-decoration: none;
+  text-align: center;
+}
+.first_line {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3em;
+  font-weight: 500;
+}
+.second_line {
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  font-size: 5em;
+  text-transform: uppercase;
+}
+.line-2 {
+  border-top: 4px solid black;
+}
+.third_line {
+  font-family: "Montserrat", sans-serif;
+  font-size: 2em;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+
+.btn-1{
+  width: 60%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin:auto;
+  margin-top: 60px;
+  
+}
+
+.btn-1 a {
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #010100;
+  padding: 15px;
+  padding-right:20%;
+  padding-left:20%;
+  color: rgb(36, 37, 42);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  transition: all .5s ease-in-out;
+
+}
+
+span {
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  z-index: 3;
+}
+
+/* Button 1 styles */
+
+
+
+
+
+.btn-1 a:hover {
+  background-color: rgba(237, 240, 241, 0.6);
+  transition: all .5s ease-in-out;
+  transform: scaleX(1);
+}
+@media screen and (max-width: 1246px) {
+
+  .hero_text {
+  top: 25%;
+  right: 70%;
+
+}
+}
+
+@media screen and (max-width: 950px) {
+  .half_page{
+    z-index: 100;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(237, 240, 241, 0.6);
+    backdrop-filter: blur(8px);
+    margin: auto;
+    
+  }
+  .hero_text {
+      z-index: 100;
+    text-align: center;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    top: 30%;
+    left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+
+}
+}
+
