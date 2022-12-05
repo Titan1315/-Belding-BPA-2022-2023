@@ -129,11 +129,13 @@
 
 .footer__links {
   display: flex;
+  
   justify-content: space-evenly;
-  padding: 20px;
+  padding-bottom: 20px;
   transition: transform .2s;
   margin:auto;
   height: 5vw;
+  align-items: flex-end;
 }
 
 .footer__copyright {
@@ -181,7 +183,7 @@
   transition: all 0.2s;
 }
 .footer__code-img-container {
-    width: 13%;
+    width: 64px;
 }
 .footer__citation-img {
   width: 55%;

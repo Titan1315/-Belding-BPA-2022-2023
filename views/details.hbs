@@ -1,4 +1,3 @@
-
 <div class="whole_page">
 
   {{#if car}}
@@ -65,7 +64,7 @@
               />
               <div class="text_container">
                 <h3 class="info_spec">
-                  4 wheel drive
+                  {{DRIVE}} wheel drive
                 </h3>
                 <p class="type_spec">
                   Drive Type
@@ -80,7 +79,7 @@
               />
               <div class="text_container">
                 <h3 class="info_spec">
-                  6cyl/3
+                  {{CENGINE}}cyl/{{LENGINE}} L
                 </h3>
                 <p class="type_spec">
                   Engine Type
@@ -95,7 +94,7 @@
               />
               <div class="text_container">
                 <h3 class="info_spec">
-                  {{MPG}}
+                  {{CMPG}} City/ {{HMPG}} Hwy
                 </h3>
                 <p class="type_spec">
                   miles per gallon
@@ -110,7 +109,7 @@
               />
               <div class="text_container">
                 <h3 class="info_spec">
-                  2 owners
+                  {{OWNERS}} owners
                 </h3>
                 <p class="type_spec">
                   Prior Owners
@@ -152,46 +151,132 @@
           </div>
         </div>
       </div>
-
-      <div id="loancal">
-
-        <h1>Loan Calculator</h1>
-        <div class="input">
-
-          <p>Loan Amount: $</p>
-          <input
-            id="amount"
-            type="number"
-            min="1"
-            max="5000000"
-            onchange="computeLoan()"
-          />
-          <p>Interest Rate: %</p>
-          <input
-            id="interest_rate"
-            min="0"
-            max="100"
-            value="10"
-            step=".1"
-            onchange="computeLoan()"
-          />
-          <p>Months to Pay: </p>
-          <input
-            id="months"
-            type="number"
-            min="1"
-            max="300"
-            value="1"
-            step="1"
-            onchange="computeLoan()"
-          />
-          <h2 id="payment"></h2>
-        </div>
+      <div class="loan_calc_title">
+        <div class="load_title_container"><h1>Estimate your car payment</h1></div>
+        <div class="load_dis_container">
+          <h2>Just enter your intrest rate and how many months you want to pay
+            it in and we will do the rest!</h2></div>
       </div>
 
+  
+      
+      <div class="loan_stuff">
+
+        
+        <div class="loancal">
+          <div class="loancal_text_container">
+            
+          <div class="loan_price_container">
+            <p class="loan_price_title">Price of Vehicle</p>
+           
+            <p class="loan_price" id="amount">${{PRICE}}</p>
+             <div class="line_3"></div>
+          </div>
+          <div class="input">
+            <div class= "input_1 inputs">           
+            <p class= "loan_p">Interest Rate: %</p>
+            <input
+              id="interest_rate"
+              min="0"
+              max="100"
+              value="10"
+              step=".1"
+              onchange="computeLoan()"
+            />
+          </div>
+            <div class = "input_2 inputs">
+            
+            <p class= "loan_p">Months to Pay: </p>
+            <input
+              id="months"
+              type="number"
+              min="1"
+              max="300"
+              value="72"
+              
+              onchange="computeLoan()"
+            />
+              
+            </div>
+          </div>
+          </div>
+        </div>
+        <div class="loan_output_card">
+          <div class="loan_output_text_container">
+            
+          
+          <div class="output_card_title">
+          <h3 class="loan_payment_text">Payment Breakdown</h3>
+             <div class="line_4"></div>
+          </div>
+          <div class="header_loan_container">   
+              <p id="payment" class="payment"> $0 </p>
+          </div >
+          
+          <div class = "price_breakdown_container">
+              
+            <p class = "loan_info" id="total_amount_text">${{PRICE}} Price</p>
+            <p class = "loan_info" id="intrest_amount_text"> 0 Monthly Intrest</p>
+            <div class="line_2"></div>
+            <p class = "loan_info" id="months_amount_text">0 Months</p>
+          </div>
+          <div class="end_loan_info_container">
+            <div class="total_after_text_container total_text_container">
+              <p class="total_after_title total_after_titles">Total Payment</p>
+              <p class = "end_loan_info" id="total_after_amount_text">0</p>
+            </div>
+            <div class="total_after_month_text_container total_text_container">
+              <p class="total_after_month_title total_after_titles">Monthly Payment</p>
+              <p class = "end_loan_info" id="total_after_months_amount_text">0</p>
+            </div>
+            
+            
+          </div>
+        </div>
+      </div>
+      </div>
+    
     {{/each}}
     {{#else}}
       <p> no rows </p>
     {{/else}}
   {{/if}}
 </div>
+
+<script>
+  function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+  
+  
+  
+  function computeLoan(){ 
+  const amount = document.querySelector('#amount').innerHTML; 
+  const IAMT = parseInt(amount.replace(/,/g, '').replace(/\$/g, ''));
+    console.log(IAMT);
+    console.log(amount);
+  const interest_rate = document.querySelector('#interest_rate').value;
+  const months = document.querySelector('#months').value;
+  const interest = (IAMT * (interest_rate * 0.01)) / months; 
+  let sendIntrest = (interest).toFixed(2);
+  let totalAfter = (IAMT + (IAMT * (interest_rate * 0.01))).toFixed(0);
+    console.log(totalAfter);
+  let payment = ((IAMT / months) + interest).toFixed(0);
+  payment = numberWithCommas(payment);
+  sendIntrest = sendIntrest.toString().replace(/\\\B(?=(\d{3})+(?!\d))/g, ",");
+  totalAfter = numberWithCommas(totalAfter);
+  
+  document.querySelector('#payment').innerHTML = `$${payment}`
+  document.querySelector('#intrest_amount_text').innerHTML = `$${sendIntrest} Monthly Intrest`
+  document.querySelector('#months_amount_text').innerHTML = `${months} Months `
+  document.querySelector('#total_after_amount_text').innerHTML = `$${totalAfter} `
+  document.querySelector('#total_after_months_amount_text').innerHTML = `$${payment} `
+
+
+
+      
+  }
+
+  
+  
+</script>
