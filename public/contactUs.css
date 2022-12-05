@@ -4,8 +4,14 @@ section{
   font-weight: 500;
   
 }
+input{
+  font-family: "Montserrat", sans-serif;
+}
+
+
 .section-contact {
   min-height: 100vh;
+  overflow: hidden;
   padding-top: 100px;
   padding-bottom: 100px;
   background-image: linear-gradient(175deg, #edf0f1 50%, #1190CB 50%, #00C8C7);
@@ -35,7 +41,9 @@ section{
   text-align: center;
   margin-bottom: 16px;
 }
-
+.section-contact .container .needhelp h1 {
+  font-size: 3em;
+}
 .section-contact .container p {
   color: #888888;
   font-size: 18px;

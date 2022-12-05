@@ -30,9 +30,14 @@ const upload_data = {
   model: "",
   year: "",
   miles: 0,
-  mpg: 0,
+  Cmpg: 0,
+  Hmpg: 0,
   color: "",
   price: 0,
+  owners: 0,
+  Cengine: 0,
+  Lengine: 0,
+  drive: 0,
   mainPhoto: "",
   frontPhoto: "",
   backPhoto: "",
@@ -58,9 +63,14 @@ const db = new sqlite3.Database("./db/cars.sqlite", (err) => {
         upload_data.model,
         upload_data.year,
         upload_data.miles,
-        upload_data.mpg,
+        upload_data.Cmpg,
+        upload_data.Hmpg,
         upload_data.color,
         upload_data.price,
+        upload_data.owners,
+        upload_data.Cengine,
+        upload_data.Lengine,
+        upload_data.drive,
         upload_data.mainPhoto,
         upload_data.frontPhoto,
         upload_data.backPhoto,
@@ -73,7 +83,7 @@ const db = new sqlite3.Database("./db/cars.sqlite", (err) => {
     } else if (whatToSend == "selectQuery") {
       db.all(selectQuery, function (err, table) {
         console.log("select ran");
-        //console.log(table);
+        console.log(table);
       });
     } else if (whatToSend == "createQuery") {
       db.all(createQuery, function (err, table) {
@@ -92,9 +102,9 @@ const db = new sqlite3.Database("./db/cars.sqlite", (err) => {
 });
 
 var createQuery =
-  "CREATE TABLE CARS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TYPE VARYING CHARACTER(5), MAKE VARYING CHARACTER(20), MODEL VARYING CHARACTER(20), YEAR VARYING CHARACTER(20), MILES INTEGER, MPG INTEGER, COLOR VARYING CHARACTER(20), PRICE INTEGER, MAINPHOTO VARYING CHARACTER(255), FRONTPHOTO VARYING CHARACTER(255), BACKPHOTO VARYING CHARACTER(255), FRONTINSIDEPHOTO VARYING CHARACTER(255), BACKINSIDEPHOTO VARYING CHARACTER(255) );";
+  "CREATE TABLE CARS (ID INTEGER PRIMARY KEY AUTOINCREMENT, TYPE VARYING CHARACTER(5), MAKE VARYING CHARACTER(20), MODEL VARYING CHARACTER(20), YEAR VARYING CHARACTER(20), MILES INTEGER, CMPG INTEGER, HMPG INTEGER, COLOR VARYING CHARACTER(20), PRICE INTEGER, OWNERS INTEGER, CENGINE INTEGER, LENGINE INTEGER, DRIVE INTEGER, MAINPHOTO VARYING CHARACTER(255), FRONTPHOTO VARYING CHARACTER(255), BACKPHOTO VARYING CHARACTER(255), FRONTINSIDEPHOTO VARYING CHARACTER(255), BACKINSIDEPHOTO VARYING CHARACTER(255) );";
 var insertQuery =
-  "INSERT INTO CARS (TYPE, MAKE, MODEL, YEAR, MILES, MPG, COLOR, PRICE, MAINPHOTO, FRONTPHOTO, BACKPHOTO, FRONTINSIDEPHOTO, BACKINSIDEPHOTO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+  "INSERT INTO CARS (TYPE, MAKE, MODEL, YEAR, MILES, CMPG, HMPG, COLOR, PRICE, OWNERS, CENGINE, LENGINE, DRIVE, MAINPHOTO, FRONTPHOTO, BACKPHOTO, FRONTINSIDEPHOTO, BACKINSIDEPHOTO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 var selectQuery = "SELECT * FROM CARS";
 var dropQuery = "DROP TABLE CARS;";
 var randQuery = "DELETE FROM CARS WHERE id= 1;";
@@ -129,6 +139,9 @@ app.get("/citations", function (req, res) {
     style: "citations",
   });
 });
+
+
+
 
 //library page routes
 
@@ -209,9 +222,14 @@ app.post("/upload", (req, res, next) => {
   upload_data.model = req.body.model;
   upload_data.year = req.body.year;
   upload_data.miles = req.body.miles;
-  upload_data.mpg = req.body.mpg;
+  upload_data.Cmpg = req.body.Cmpg;
+  upload_data.Hmpg = req.body.Hmpg;
   upload_data.color = req.body.color;
   upload_data.price = req.body.price;
+  upload_data.owners = req.body.owners;
+  upload_data.Cengine = req.body.Cengine;
+  upload_data.Lengine = req.body.Lengine;
+  upload_data.drive = req.body.drive;
   upload_data.mainPhoto = req.body.main_photo;
   upload_data.frontPhoto = req.body.front_photo;
   upload_data.backPhoto = req.body.back_photo;
@@ -224,9 +242,14 @@ app.post("/upload", (req, res, next) => {
     upload_data.model,
     upload_data.year,
     upload_data.miles,
-    upload_data.mpg,
+    upload_data.Cmpg,
+    upload_data.Hmpg,
     upload_data.color,
     upload_data.price,
+    upload_data.owners,
+    upload_data.Cengine,
+    upload_data.Lengine,
+    upload_data.drive,
     upload_data.mainPhoto,
     upload_data.frontPhoto,
     upload_data.backPhoto,
@@ -236,6 +259,7 @@ app.post("/upload", (req, res, next) => {
       console.log(table);
     }
   );
+  
   db.all(selectQuery, function (err, table) {
     console.log(table);
     console.log("slected");

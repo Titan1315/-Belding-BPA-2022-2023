@@ -1,5 +1,8 @@
- .whole_page {
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+.whole_page {
   background-color: #edf0f1;
+  padding-bottom: 10%;
 }
 
 .title_container {
@@ -14,10 +17,10 @@
 }
 
 .gallery_container {
-  box-shadow: 0px -5px 58px 19px #2f3a44;
+  box-shadow: 0px 0px 0px 0px #2f3a44;
   background-color: #24252a;
   padding-top: 20px;
-  border-top: 3px solid #000000;
+  
   padding-bottom: 8%;
   border-bottom: 3px solid #000000;
   overflow: hidden;
@@ -202,11 +205,212 @@
   width: auto;
 }
 
-#loancal {
-  width: 345px;
-  height: 420px;
-  background-color:white;
-  color: #ffffff;
-  padding: 10px;
-  margin: 100px auto;
+
+
+.loan_calc_title{
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  
+  font-weight: 500;
+  
+}
+
+.load_dis_container{
+  width: 60%;
+  margin: auto;
+}
+
+.loan_calc_title h1{
+  font-size: 3em;
+  
+}
+.loan_calc_title h2{
+  font-size: 2em;
+  
+}
+
+
+.loan_stuff{
+  display: flex;
+  justify-content: space-evenly;
+  
+  width: 80%;
+  height: 80%;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+
+}
+.loancal {
+  border-radius: 10px;
+  padding: 6%;
+  height: 100%;
+  width: 30%;
+  color: #edf0f1;
+  text-align: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  top: 5%;
+  margin: auto;
+  background-color: #24252a ;
+  
+}
+.loancal_text_container{
+  margin:auto;
+  
+}
+.loancal input{
+  width: 50%;
+  border: none;
+  border-radius: 10px;
+  padding: .2em;
+  font-size: 1em; 
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+.line_3{
+  border-top: 1px solid #edf0f1;
+  
+}
+.input{
+  text-align:center;
+  padding-top: 1.5em;
+  
+  
+}
+.inputs{
+  padding-bottom: 2em;
+
+}
+.loan_price{
+  padding-bottom: .1em;
+  
+}
+.loan_p{
+  padding-top: .5em;
+  padding-bottom: .5em;
+}
+.loan_price_container{
+  font-size: 2em;
+  text-align:center;
+}
+
+.loan_output_card{
+  width: 40%;
+  border: 1px solid #1190cb;
+  height: 30em;
+  outline: none;
+  border-color: #1190cb;
+  box-shadow: 0 0 10px #1190cb;
+  border-radius: 10px;
+  margin:auto;
+}
+.loan_output_text_container{
+  margin: auto;
+  padding: 5%;
+}
+.output_card_title{
+  text-align:center;
+  margin-top:0;
+  font-size: 2em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  padding-top: .5em;
+  padding-bottom:.5em;
+}
+.line_4{
+  border: 1px solid #24252a;
+  width: 82%;
+  margin: auto;
+}
+.header_loan_container{
+  height: 30%;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  margin:auto;
+  margin-top: 10%;
+  
+  border-radius: 10px;
+  text-align:center;
+  margin:auto;
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment{
+  
+  margin:auto;
+  font-size: 4em;
+  color: #24252a;
+  text-shadow: white 1px 0 10px;  
+}
+.price_breakdown_container{
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+  width: 80%;
+}
+.line_2{
+  width:50%;
+  border-top: 1px solid #24252a;
+  
+}
+.loan_info{
+  text-align:left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  padding-top: .5em;
+  padding-bottom: .5em;
+  font-size: 1.5em;
+}
+.end_loan_info_container{
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.total_text_container{
+  display:flex;
+  display:flex;
+  flex-direction: column;
+  
+}
+.total_after_titles{
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+.end_loan_info{
+  text-align:left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  padding-top: 1em;
+  font-size: 1.5em;
+  
+  
+}
+
+
+@media screen and (max-width: 1246px) {
+
+  .load_dis_container{
+  width: 80%;
+  margin: auto;
+  }
+}
+@media screen and (max-width: 1100px) {
+
+ 
+    .loan_stuff{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    }
 }
