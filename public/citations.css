@@ -1,5 +1,69 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
 
+
+
+.section_3{
+
+  height: 100vh;
+  position: relative;
+    z-index: 100;
+    background-color: #d0e1f0 ;
+  
+}
+
+
+.mission_container{
+  width: 90vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  
+  
+}
+.mission_left_container{
+  display:flex;
+  
+  width: 50%;
+}
+.left_mission_img{
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  right: 0;
+  top: 50%;
+  margin-top:10%;
+  
+}
+.mission_right_container{
+  width: 50%;
+  margin: auto;
+  
+  
+}
+.mission_title{
+  padding-bottom: 1em;
+  font-family: "Montserrat", sans-serif;
+  font-size:3em;
+  text-align:center;
+}
+.mission_text {
+    font-size: 1.5em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    top: 0;
+    /* background-color: rgba(237, 240, 241,.9); */
+    /* border-radius: 10px; */
+    padding: 0.5em;
+    text-align: center;
+}
+
+
+
+
+
+
+
 .citation-page-container{
   background-color: #edf0f1;
 }
@@ -19,4 +83,8 @@
   height: 100vh;
   margin-bottom: 40px;
 }
+
+
+
+
 

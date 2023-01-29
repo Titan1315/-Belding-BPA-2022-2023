@@ -2,23 +2,53 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+    <title>Shifting Gears</title>
     <title>My Awesome App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="icon" type="image/x-icon" href="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/gear%20turn.gif?v=1670250604834">
     <link rel="stylesheet" type="text/css" href="/{{style}}.css" />
     <script src="server.js"></script>  
-    <script src="client.js"></script> 
+    
   </head>
   <body>
-    
+
     
     {{> header}}
     
     {{{body}}}
     
     {{> footer}}
+   <!-- 
+    <div id="loader"></div>
+    <script src="/client.js"></script>
+    <script>
     
+     window.addEventListener('load', (event) => {
+        document.getElementById("loader").style.display = "none";
+      });
     
+    </script>
+    <style>
+    
+    #loader {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff;
+      z-index: 99999;
+    }
+
+    #loader img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    
+    </style> -->
   </body>
   
 </html>

@@ -23,7 +23,6 @@ app.engine(
 
 app.set("view engine", "hbs");
 
-
 const upload_data = {
   type: "",
   make: "",
@@ -107,7 +106,7 @@ var insertQuery =
   "INSERT INTO CARS (TYPE, MAKE, MODEL, YEAR, MILES, CMPG, HMPG, COLOR, PRICE, OWNERS, CENGINE, LENGINE, DRIVE, MAINPHOTO, FRONTPHOTO, BACKPHOTO, FRONTINSIDEPHOTO, BACKINSIDEPHOTO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 var selectQuery = "SELECT * FROM CARS";
 var dropQuery = "DROP TABLE CARS;";
-var randQuery = "DELETE FROM CARS WHERE id= 1;";
+var randQuery = "DELETE FROM CARS WHERE id= 14;";
 var sql;
 function getData() {
   db.run(createQuery);
@@ -140,14 +139,21 @@ app.get("/citations", function (req, res) {
   });
 });
 
+app.get("/paralaxtest", function (req, res) {
+  res.render("paralaxtest", {
+    style: "paralaxtest",
+  });
+});
 
+app.get("/BPAboutUs", function (req, res) {
+  res.render("BPAboutUs", {
+    style: "BPAboutUs",
+  });
+});
 
+//original library querey
 
-//library page routes
-
-var Data = {};
-var runThrough = false;
-
+/*
 app.get("/library", (req, res, next) => {
   sql = "SELECT * FROM CARS ";
 
@@ -178,6 +184,43 @@ app.get("/library", (req, res, next) => {
       status: 400,
       success: false,
     });
+  }
+});*/
+
+//library page routes
+
+var Data = {};
+var runThrough = false;
+
+app.get("/library", (req, res, next) => {
+  sql = "SELECT * FROM CARS ";
+
+  try {
+    const quereyObject = url.parse(req.url, true).query;
+    if (quereyObject.type) {
+      sql += `WHERE TYPE LIKE '${quereyObject.type}' OR MAKE LIKE '${quereyObject.type}' OR MODEL LIKE '${quereyObject.type}' OR  YEAR LIKE '${quereyObject.type}'`;
+
+      console.log("sql is this " + sql);
+    }
+    
+    db.all(sql, [], (err, rows) => {
+      if (err) {
+          console.log(err)
+          return res.redirect("/library?error=true");
+      }
+
+      if (rows.length < 1) {
+        return res.redirect("/library?error=true");
+      }
+
+      res.render("library", {
+        cars: rows,
+        name: "test",
+        style: "library",
+      });
+    });
+  } catch (error) {
+    return res.redirect("/library?error=true");
   }
 });
 
@@ -259,7 +302,7 @@ app.post("/upload", (req, res, next) => {
       console.log(table);
     }
   );
-  
+
   db.all(selectQuery, function (err, table) {
     console.log(table);
     console.log("slected");

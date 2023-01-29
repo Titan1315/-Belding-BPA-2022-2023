@@ -22,42 +22,42 @@
           {{MODEL}}
         </h1>
       </div>
+     
+  
       <div class="gallery_container">
         <div class="slide-container">
-          <span class="slider-span" id="slider-span1"></span>
-          <span class="slider-span" id="slider-span2"></span>
-          <span class="slider-span" id="slider-span3"></span>
-          <span class="slider-span" id="slider-span4"></span>
-          <span class="slider-span" id="slider-span5"></span>
 
-          <div class="image-slider">
 
             <div class="slides-div" id="slide-2">
               <img src="{{BACKPHOTO}}" alt="" class="img" id="img2" />
-              <a href="#slider-span2" class="button" id="button-2"></a>
+          
             </div>
             <div class="slides-div" id="slide-3">
               <img src="{{MAINPHOTO}}" alt="" class="img" id="img3" />
-              <a href="#slider-span3" class="button" id="button-3"></a>
+             
             </div>
             <div class="slides-div" id="slide-4">
               <img src="{{FRONTPHOTO}}" alt="" class="img" id="img4" />
-              <a href="#slider-span4" class="button" id="button-4"></a>
+              
             </div>
 
-          </div>
+  
         </div>
       </div>
+  
       <div class="Overview_Title_container">
         <h2 class="Overview_Title_text">Overview</h2>
         <div class="line"></div>
       </div>
+  
+      
+  
       <div class="detail_container">
         <div class="info_container">
 
           <div class="specs_container">
 
-            <div class="top_one top">
+            <div class="top_one top spec">
               <img
                 class="drive_icon icons"
                 src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/84664923216267953713602-128.png?v=1669049452965"
@@ -72,7 +72,7 @@
               </div>
             </div>
 
-            <div class="top_two top">
+            <div class="top_two top spec">
               <img
                 class="engine_icon icons"
                 src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/19623620751640841241-128.png?v=1669049451896"
@@ -87,7 +87,7 @@
               </div>
             </div>
 
-            <div class="top_three top">
+            <div class="top_three top spec">
               <img
                 class="gas_icon icons"
                 src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/9327231371556280914-128.png?v=1669049452339"
@@ -97,12 +97,12 @@
                   {{CMPG}} City/ {{HMPG}} Hwy
                 </h3>
                 <p class="type_spec">
-                  miles per gallon
+                  Miles per gallon
                 </p>
               </div>
             </div>
 
-            <div class="bottom_one bottom">
+            <div class="bottom_one bottom spec">
               <img
                 class="owners_icon icons"
                 src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/8835701331556281664-128.png?v=1669049452532"
@@ -117,7 +117,7 @@
               </div>
             </div>
 
-            <div class="bottom_two bottom">
+            <div class="bottom_two bottom spec">
               <img
                 class="color_icon icons"
                 src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/6424188411555931402-128.png?v=1669063850572"
@@ -133,7 +133,7 @@
               </div>
             </div>
 
-            <div class="bottom_three bottom">
+            <div class="bottom_three bottom spec">
               <img
                 class="transmission_icon icons"
                 src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/8893889031595988887-128.png?v=1669049452125"
@@ -147,14 +147,54 @@
                 </p>
               </div>
             </div>
+            
+            <div class="bottom_three bottom spec  dummy_container" id="dummy_container">
 
+              <div class="text_container">
+                <h3 class="info_spec">
+                  
+                </h3>
+                <p class="type_spec">
+                 
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom_three bottom spec full_bottom bottom ">
+              <img
+                class="miles_icon icons"
+                id="miles_icon"
+                src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/gauge.png?v=1670215538791"
+              />
+              <div class="text_container">
+                <h3 class="info_spec">
+                  Milage
+                </h3>
+                <p class="type_spec" id="miles">
+                  {{MILES}}
+                </p>
+              </div>
+            </div>
+
+            <div class="bottom_three bottom spec dummy_container" id="dummy_container_1">
+
+              <div class="text_container">
+                <h3 class="info_spec">
+                  
+                </h3>
+                <p class="type_spec">
+                 
+                </p>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
       <div class="loan_calc_title">
-        <div class="load_title_container"><h1>Estimate your car payment</h1></div>
+        <div class="load_title_container"><h1>Estimate your payment</h1></div>
         <div class="load_dis_container">
-          <h2>Just enter your intrest rate and how many months you want to pay
+          <h2>Enter your interest rate and how many months you want to pay
             it in and we will do the rest!</h2></div>
       </div>
 
@@ -167,9 +207,9 @@
           <div class="loancal_text_container">
             
           <div class="loan_price_container">
-            <p class="loan_price_title">Price of Vehicle</p>
+            <p class="loan_price_title price_contain">Price of Vehicle</p>
            
-            <p class="loan_price" id="amount">${{PRICE}}</p>
+            <p class="loan_price price_contain" id="amount">${{PRICE}}</p>
              <div class="line_3"></div>
           </div>
           <div class="input">
@@ -216,7 +256,7 @@
           <div class = "price_breakdown_container">
               
             <p class = "loan_info" id="total_amount_text">${{PRICE}} Price</p>
-            <p class = "loan_info" id="intrest_amount_text"> 0 Monthly Intrest</p>
+            <p class = "loan_info" id="intrest_amount_text"> 0 Monthly Interest</p>
             <div class="line_2"></div>
             <p class = "loan_info" id="months_amount_text">0 Months</p>
           </div>
@@ -250,33 +290,76 @@
   
   
   
-  function computeLoan(){ 
+function computeLoan(){ 
   const amount = document.querySelector('#amount').innerHTML; 
   const IAMT = parseInt(amount.replace(/,/g, '').replace(/\$/g, ''));
-    console.log(IAMT);
-    console.log(amount);
   const interest_rate = document.querySelector('#interest_rate').value;
   const months = document.querySelector('#months').value;
-  const interest = (IAMT * (interest_rate * 0.01)) / months; 
-  let sendIntrest = (interest).toFixed(2);
-  let totalAfter = (IAMT + (IAMT * (interest_rate * 0.01))).toFixed(0);
-    console.log(totalAfter);
-  let payment = ((IAMT / months) + interest).toFixed(0);
-  payment = numberWithCommas(payment);
-  sendIntrest = sendIntrest.toString().replace(/\\\B(?=(\d{3})+(?!\d))/g, ",");
-  totalAfter = numberWithCommas(totalAfter);
-  
-  document.querySelector('#payment').innerHTML = `$${payment}`
-  document.querySelector('#intrest_amount_text').innerHTML = `$${sendIntrest} Monthly Intrest`
-  document.querySelector('#months_amount_text').innerHTML = `${months} Months `
-  document.querySelector('#total_after_amount_text').innerHTML = `$${totalAfter} `
-  document.querySelector('#total_after_months_amount_text').innerHTML = `$${payment} `
-
-
-
-      
-  }
+  const rate = (interest_rate/12/100);
+  let payment = (IAMT*rate*Math.pow(1+rate,months))/(Math.pow(1+rate,months)-1);
+  let interest = ((payment*months)-IAMT);
+  let totalAfter = (IAMT + interest);
+  payment = numberWithCommas(payment.toFixed(2));
+  interest = numberWithCommas(interest.toFixed(2));
+  totalAfter = numberWithCommas(totalAfter.toFixed(2));
+  document.querySelector('#payment').innerHTML = `$${payment}`;
+  document.querySelector('#intrest_amount_text').innerHTML = `$${interest} total Interest`;
+  document.querySelector('#months_amount_text').innerHTML = `${months} Months `;
+  document.querySelector('#total_after_amount_text').innerHTML = `$${totalAfter} `;
+  document.querySelector('#total_after_months_amount_text').innerHTML = `$${payment} `;
+}
 
   
   
+  
+  
+// Select the elements you want to animate
+const elements = document.querySelectorAll('.Overview_Title_container, .spec');
+
+function animateElements() {
+  // Get the height of the viewport
+  const viewportHeight = window.innerHeight;
+
+  // Loop through the elements
+  elements.forEach((element) => {
+    // Set up the flag variable for this element
+    let animationPlayed = false;
+
+    // Get the distance from the top of the element to the bottom of the viewport
+    const distanceFromBottom = viewportHeight - (element.getBoundingClientRect().top + element.offsetHeight);
+
+    // Check if the distance is greater than or equal to 20% of the viewport height
+    if (distanceFromBottom >= viewportHeight * 0.2 && !animationPlayed) {
+      // Animate the element
+      element.style.animation = 'fadeIn 1s, slideUp 1s';
+    element.style.animationFillMode = 'forwards';
+      // Set the flag to true when the animation ends
+      element.addEventListener('animationend', () => {
+        animationPlayed = true;
+      });
+    }
+  });
+}
+
+// Animate the elements when the page is scrolled or resized
+window.addEventListener('scroll', animateElements);
+window.addEventListener('resize', animateElements);
+
+// Animate the elements when the page is loaded
+window.addEventListener('load', animateElements);
+
+window.addEventListener('load', (event) => {
+  const milesElement = document.getElementById('miles').innerHTML;
+  // Get the MILES value from your JavaScript code
+  console.log(milesElement);
+  const milesValue = milesElement;
+  console.log(milesValue);
+  // Use the toLocaleString() method to format the number with commas
+  const milesFormatted = numberWithCommas(milesValue);
+    console.log(milesFormatted);
+
+  // Update the text of the element with the formatted miles value
+  document.querySelector('#miles').innerHTML = `${milesFormatted} `;
+});
+
 </script>

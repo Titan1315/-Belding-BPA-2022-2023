@@ -1,18 +1,64 @@
 <link rel="stylesheet" type="text/css" href="/partials.css" />
 <header class="header">
- 
-  <img class="logo" src = "https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/logo_transparent_background.png?v=1670174787380" alt="">
-  
-  
+
+  <img
+    class="logo"
+    src="https://cdn.glitch.global/e9df061e-776e-4ef3-bb04-d9f66ffe2940/logo_transparent_background.png?v=1670174787380"
+    alt=""
+  />
+
   <nav>
-      <ul class="nav-links">
-        <li class="li_header"><a class = "a_header_li" href="/">Home</a></li>
-        <li class="li_header"><a class = "a_header_li" href="/library">Inventory</a></li>
-        <li class="li_header"><a class = "a_header_li" href="/aboutus">About Us</a></li>
+    <ul class="nav-links">
+      <li class="li_header"><a title="Home Page" class="a_header_li" href="/">Home</a></li>
+      <li class="li_header"><a title="Inventory Page" class="a_header_li" href="/library">Inventory</a></li>
+      <li class="li_header"><a title="About Us Page" class="a_header_li" href="/aboutus">About Us</a></li> 
+    </ul>
 
-
+    <label for="menu-hamburger" class="hamburger-label">
+      <svg
+        class="hamburger-menu"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+        id="Layer_1"
+        x="0px"
+        y="0px"
+        viewbox="0 0 50 50"
+        enable-background="new 0 0 50 50"
+        xml:space="preserve"
+      >
+        <path
+          fill="#edf0f1"
+          d="M8.667,15h30c0.552,0,1-0.447,1-1s-0.448-1-1-1h-30c-0.552,0-1,0.447-1,1S8.114,15,8.667,15z"
+        ></path>
+        <path
+          fill="#edf0f1"
+          d="M8.667,37h30c0.552,0,1-0.447,1-1s-0.448-1-1-1h-30c-0.552,0-1,0.447-1,1S8.114,37,8.667,37z"
+        ></path>
+        <path
+          fill="#edf0f1"
+          d="M8.667,26h30c0.552,0,1-0.447,1-1s-0.448-1-1-1h-30c-0.552,0-1,0.447-1,1S8.114,26,8.667,26z"
+        ></path>
+      </svg>
+    </label>
+    <input type="checkbox" id="menu-hamburger" class="hamburger__input" />
+    <div class="mobile-buttons">
+      
+      <ul>
+        <li>
+          <a class="mobile__personal" href="/">Home</a>
+        </li>
+        <li>
+          <a class="mobile__recycling" href="/library">Inventory</a>
+        </li>
+        <li>
+        <a class="mobile__transportation" href="/aboutus">About Us</a>
+        </li>
+        <li><a class="mobile__energy" href="/contactUs">Contact Us</a></li>
       </ul>
-    </nav>
-  <a class="cta" href="/contactUs"><button class="cta_btn">Contact Us</button></a>  
+    </div>
+  </nav>
   
+  <a title="Contact Us Page" class="cta" href="/contactUs"><button class="cta_btn">Contact Us</button></a>
+
 </header>
