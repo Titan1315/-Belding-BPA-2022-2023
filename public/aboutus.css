@@ -1,4 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/helvetica-neue-9');
+
+
 .wrapper{
     display: flex;
   flex-direction: column;
@@ -9,9 +11,7 @@
 }
 
 
-.pinContainer{
-  
-}
+
 .aboutus_main_title{
   
   font-family: "Montserrat", sans-serif;

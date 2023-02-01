@@ -4,12 +4,27 @@ const hbs = require("express-handlebars");
 const sqlite3 = require("sqlite3").verbose();
 const path = require("path");
 const url = require("url");
+const nodemailer = require('nodemailer');
 //const bodyParser = require('body-parser')
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
+
+
+ 
+
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'shiftinggearscars.co@gmail.com',
+    pass: 'megpnfpswqvbjqqx'
+  }
+});
+
+
 
 app.engine(
   "hbs",
@@ -52,7 +67,7 @@ const db = new sqlite3.Database("./db/cars.sqlite", (err) => {
   } else {
     console.log("DataBase Connected");
 
-    var whatToSend = "selectQuery";
+    var whatToSend = "";
 
     if (whatToSend == "insertQuery") {
       db.all(
@@ -106,7 +121,7 @@ var insertQuery =
   "INSERT INTO CARS (TYPE, MAKE, MODEL, YEAR, MILES, CMPG, HMPG, COLOR, PRICE, OWNERS, CENGINE, LENGINE, DRIVE, MAINPHOTO, FRONTPHOTO, BACKPHOTO, FRONTINSIDEPHOTO, BACKINSIDEPHOTO) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 var selectQuery = "SELECT * FROM CARS";
 var dropQuery = "DROP TABLE CARS;";
-var randQuery = "DELETE FROM CARS WHERE id= 14;";
+var randQuery = "DELETE FROM CARS WHERE id= 1;";
 var sql;
 function getData() {
   db.run(createQuery);
@@ -131,6 +146,28 @@ app.get("/contactUs", function (req, res) {
   res.render("contactUs", {
     style: "contactUs",
   });
+});
+app.post("/contactUs", (req, res, next) => {
+  console.log("ran");
+  console.log(req.body);
+  
+  var mailOptions = {
+  from: 'shiftinggearscars.co@gmail.com',
+  to: req.body.email,
+  subject: 'Shifting Gears Inquiry',
+  text: 'Thank you ' + req.body.firstname +" "+ req.body.lastname + ' for contacting us, a team member will get back to you shortly. \nHere is a copy of your message: \n \n ' + req.body.message
+};
+  
+  
+  
+  transporter.sendMail(mailOptions, function(error, info){
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('Email sent: ' + info.response);
+  }
+  });
+  res.redirect("/contactUs");
 });
 
 app.get("/citations", function (req, res) {

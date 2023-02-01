@@ -99,7 +99,7 @@
   font-size: 15px;
   font-weight: 500;
   width: 50%;
-  height: 50vh;
+  height: 70vh;
   background-color: #edf0f1;
   margin: auto;
   display: grid;
@@ -411,6 +411,10 @@
   height: 30%;
   width: auto;
 }
+  #miles_icon {
+    width: 30%;
+    height: auto;
+}
 }
 
 @media screen and (max-width: 1246px) {
@@ -424,11 +428,15 @@
   width:  80%;
   
 }
+    #miles_icon {
+    width: 22%;
+    height: auto;
+}
 
 .specs_container {
   
   width: 80%;
-  height: 50vh;
+  height: 80vh;
   
   
 }
@@ -492,7 +500,7 @@
   .specs_container {
   
   width: 80%;
-  height: 80vh;
+  height: 100vh;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-gap: 10%;
