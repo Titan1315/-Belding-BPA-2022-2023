@@ -1,28 +1,23 @@
-/* (function (global, $) {
-  $(function () {
-    let controller = new ScrollMagic.Controller();
-  
-var scene = new ScrollMagic.Scene({
-  triggerElement: "#section_1", // point of execution
- // pin element for the window height - 1
-  triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
-  })
-.setPin(".section_1", {pushFollowers: false})
-.addIndicators()
-.addTo(controller);
 
-var scene2 = new ScrollMagic.Scene({
-  triggerElement: "#section_2", // point of execution
-   // pin element for the window height - 1
-  offset: "30%",
-  triggerHook: 0, // don't trigger until #pinned-trigger1 hits the top of the viewport
-  })
-.setPin(".section_2", {pushFollowers: false})
-.addIndicators()
-.addTo(controller);
+(function (global, $) {
+
+
+
+
+  $(function () {
+    
+    console.log("test");
+      
+   
+   // let controller = new ScrollMagic.Controller({globalSceneOptions: {triggerHook: "onEnter", duration: "200%"}
+
+
+    //new ScrollMagic.Scene({triggerElement: "#wrapper"})
+			//		.setTween("#background > div", {y: "80%", ease: Linear.easeNone})
+				//	.addIndicators()
+					//.addTo(controller);
   
-    
-    
+
     
     
     
@@ -30,7 +25,7 @@ var scene2 = new ScrollMagic.Scene({
 })(window, jQuery);
 
 
-
+/*
 	$(function () { // wait for document ready
 		// init
 		var controller2 = new ScrollMagic.Controller();
